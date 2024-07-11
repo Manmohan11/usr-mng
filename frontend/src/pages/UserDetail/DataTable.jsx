@@ -18,8 +18,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import AddUserForm from "@/components/AddUserForm"; // Update path as per your project structure
+import { columns } from "./columns"; // Import your columns configuration
 
-export function DataTable({ columns, data }) {
+export function DataTable({ data }) {
   const [sorting, setSorting] = React.useState([]);
   const [columnFilters, setColumnFilters] = React.useState([]);
   const [columnVisibility, setColumnVisibility] = React.useState({});

@@ -1,7 +1,6 @@
 import { createUser } from '@/controllers/userController';
-import { protect } from '@/middleware/authMiddleware';
 
-export default protect(async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
       const newUser = await createUser(req.body);
@@ -14,4 +13,4 @@ export default protect(async function handler(req, res) {
     res.setHeader('Allow', ['POST']);
     res.status(405).json({ message: `Method ${req.method} not allowed` });
   }
-});
+}

@@ -6,7 +6,7 @@ const cors = require('cors');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
 dotenv.config();
-connectDB(); // This function should handle MongoDB connection setup
+connectDB(); // MongoDB connection
 
 const app = express();
 

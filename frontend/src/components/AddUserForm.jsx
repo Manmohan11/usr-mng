@@ -24,12 +24,7 @@ export default function AddUserForm({ onCancel }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OGY4MzUyODQ4NjBhNGMzOGY1OTQwMSIsImlhdCI6MTcyMDY4MTQwNiwiZXhwIjoxNzIzMjczNDA2fQ.zuOIN55ufRkT1NVuUvuH6jUET_nNoou8RyDZjTzIHAU'; //localStorage.getItem('token'); // Get the token from local storage
-        const response = await axios.post('http://localhost:5000/api/users', formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await axios.post('http://localhost:5000/api/users', formData);
       console.log('User added:', response.data);
       setFormData({
         id: lastUserId + 1, // Calculate the next available id
