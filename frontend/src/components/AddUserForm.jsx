@@ -5,6 +5,7 @@ import axios from 'axios';
 
 export default function AddUserForm({ onCancel }) {
   const [formData, setFormData] = useState({
+    id:  Math.floor(Math.random() * 1000000),
     first_name: '',
     last_name: '',
     email: '',
@@ -27,7 +28,7 @@ export default function AddUserForm({ onCancel }) {
       const response = await axios.post('http://localhost:5000/api/users', formData);
       console.log('User added:', response.data);
       setFormData({
-        id: lastUserId + 1, // Calculate the next available id
+        id: '', 
         first_name: '',
         last_name: '',
         email: '',
@@ -35,7 +36,7 @@ export default function AddUserForm({ onCancel }) {
         age: '',
       });
       setError(null);
-      onCancel(); // Close the form after successful submission
+      onCancel();
     } catch (error) {
       console.error('Error adding user:', error);
       setError('Failed to add user. Please try again.');
