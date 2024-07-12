@@ -12,10 +12,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://porjx.vercel.app', // The API server
+        target: 'https://usr-mng-api.vercel.app',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-      },
-    },
-  },
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
+  }
 });

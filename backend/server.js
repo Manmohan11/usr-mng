@@ -15,7 +15,7 @@ app.use(express.json());
 
 // CORS configuration
 app.use(cors({
-  origin: ["https://usr-mng-frontend.vercel.app/"], 
+  origin: 'https://usr-mng-frontend.vercel.app/', 
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
