@@ -5,8 +5,8 @@ axios.defaults.withCredentials = true;
 
 export const fetchData = async () => {
   try {
-    console.log('Attempting to fetch data from https://usr-mng-lac.vercel.app/api/users');
-    const response = await axios.get('https://usr-mng-lac.vercel.app/api/users');
+    console.log('Attempting to fetch data from https://usr-mng-api.vercel.app/api/users');
+    const response = await axios.get('https://usr-mng-api.vercel.app/api/users');
     console.log('Data fetched successfully:', response.data);
     return response.data;
   } catch (error) {
