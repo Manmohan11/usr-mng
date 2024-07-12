@@ -10,10 +10,16 @@ connectDB(); // MongoDB connection
 
 const app = express();
 
-app.use(cors());
-
 // Middleware
 app.use(express.json());
+
+// CORS configuration
+app.use(cors({
+  origin: ["https://usr-mng-frontend.vercel.app/"], 
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 
 // Routes
 app.use('/api/users', userRoutes);
