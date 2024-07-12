@@ -1,9 +1,9 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const connectDB = require('./config/db'); // MongoDB connection setup
-const userRoutes = require('./routes/userRoutes');
+const connectDB = require('../config/db'); // Adjust the path as necessary
+const userRoutes = require('../routes/userRoutes');
 const cors = require('cors');
-const { notFound, errorHandler } = require('./middleware/errorMiddleware');
+const { notFound, errorHandler } = require('../middleware/errorMiddleware');
 
 dotenv.config();
 connectDB(); // MongoDB connection
@@ -15,8 +15,8 @@ app.use(express.json());
 
 // CORS configuration
 app.use(cors({
-  origin: 'https://usr-mng-frontend.vercel.app/', 
-  methods: ['GET', 'POST'],
+  origin: 'https://usr-mng-frontend.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
@@ -28,8 +28,4 @@ app.use('/api/users', userRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+module.exports = app;
