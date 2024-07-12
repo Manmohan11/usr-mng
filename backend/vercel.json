@@ -17,18 +17,5 @@
         }
       ]
     }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/api/users",
-      "dest": "/api/users.js"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/index.js"
-    }
   ]
 }
