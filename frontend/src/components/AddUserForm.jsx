@@ -27,7 +27,7 @@ export default function AddUserForm({ onCancel }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://usr-mng-lac.vercel.app/api/users', formData);
+      const response = await axios.post('https://usr-mng-api.vercel.app/api/users', formData);
       console.log('User added:', response.data);
       setFormData({
         id: '', 
